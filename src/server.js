@@ -3,7 +3,7 @@ const app = express();
 const path = require('path');
 const handlebars = require('express-handlebars');
 var Regex = require("regex");
-const port = 3000;
+const port = process.env.PORT || 3000;
 var MongoClient = require('mongodb').MongoClient;
 
 var bodyParser = require("body-parser");
@@ -95,9 +95,7 @@ app.get('/delete', async(req,res) => {
 })
 
 
-app.listen(port, () => {
-      console.log(`Example app listening at http://localhost:${port}/home`)
-})
+app.listen(port);
 
   
 
